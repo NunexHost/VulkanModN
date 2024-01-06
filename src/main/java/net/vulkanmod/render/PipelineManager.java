@@ -86,10 +86,11 @@ public abstract class PipelineManager {
         fastBlitPipeline.cleanUp();
     }
 
-    public static void reload(RenderPass renderPass) {
+    public static void reload() {
         terrainShader.recompilePipeline();
         terrainShaderEarlyZ.recompilePipeline();
         ((ShaderMixed)(GameRenderer.getRendertypeEntityCutoutNoCullShader())).getPipeline().recompilePipeline();
+        ((ShaderMixed)(GameRenderer.getRendertypeEntityTranslucentShader())).getPipeline().recompilePipeline();
 //        ((ShaderMixed)(GameRenderer.getRendertypeEntityCutoutShader())).getPipeline().recompilePipeline();
 //        ((ShaderMixed)(GameRenderer.getRendertypeEntitySolidShader())).getPipeline().recompilePipeline();
 //        ((ShaderMixed)(GameRenderer.getRendertypeEntityCutoutNoCullZOffsetShader())).getPipeline().recompilePipeline();
